@@ -1,21 +1,25 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
+import connectToDatabase from "./database/dbConfig.js";
+import userRoutes from "./routes/userRouter.js";
 dotenv.config();
 const app = express();
-import cors from "cors";
 const port = process.env.PORT;
 const MONGODB_URI = process.env.MONGODB_URI;
-import connectToDatabase from "./database/dbConfig.js";
 
 // Database configuration
 connectToDatabase(MONGODB_URI);
 
-// cors policy
+// CORS policy
 app.use(cors());
 
-// facth data in to the json
+// Parse JSON bodies
 app.use(express.json());
 
+// Load routes
+app.use("/user", userRoutes);
+
 app.listen(port, () => {
-  console.log(`sever listeners listening on port http://localhost:${port}`);
+  console.log(`Server is listening on port http://localhost:${port}`);
 });

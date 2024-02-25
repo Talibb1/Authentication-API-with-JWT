@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // ***********   Create a Schema
-const studentSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -29,14 +29,15 @@ const studentSchema = new mongoose.Schema({
   },
 });
 
-const studentModel = mongoose.model("users", studentSchema);
+const usermodel = mongoose.model("user", userSchema);
 
-export default studentModel;
+export default usermodel;
 
 // import mongoose from "mongoose";
 // import bcrypt from "bcrypt";
 // import dotenv from "dotenv";
 // dotenv.config();
+
 
 // const saltRounds = 10;
 // const pepper = process.env.PEPPER;
