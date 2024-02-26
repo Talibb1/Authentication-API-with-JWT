@@ -1,5 +1,8 @@
 import bcrypt from "bcrypt";
 import UserModel from "../models/userModel.js";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 const userLogin = async (req, res) => {
   try {
@@ -10,8 +13,8 @@ const userLogin = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (user.email === email && isMatch) {
           // Generate JWT Token
-          // const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
-          return res.status(201).json({ message: "Login Success" });
+          const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' })
+          return res.status(201).json({ message: "Login Success", token: token });
         } else {
           return res
             .status(400)
