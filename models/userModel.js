@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
   termsConditions: {
     type: Boolean,
-    required: true,
+    required: true
   },
   join: {
     type: Date,

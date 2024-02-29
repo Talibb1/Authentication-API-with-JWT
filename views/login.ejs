@@ -9,13 +9,12 @@
           class="img-fluid" alt="Phone image">
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-        <form method="post">
+        <form action="/login" method="post">
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="" name="email" class="form-control form-control-lg" style="background-color: #ffffff; color: #495057;" />
             <label class="form-label" for="form1Example13">Email address</label>
           </div>
-
           <!-- Password input -->
           <div class="form-outline mb-4">
             <input type="password" id="" name="password" class="form-control form-control-lg" style="background-color: #ffffff; color: #495057;" />
@@ -28,7 +27,7 @@
               <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
               <label class="form-check-label" for="form1Example3" style="color: #495057;"> Remember me </label>
             </div>
-            <a href="#!" style="color: #495057;">Forgot password?</a>
+            <a href="/resetPassword" style="color: #495057;">Forgot password?</a>
           </div>
 
           <!-- Submit button -->

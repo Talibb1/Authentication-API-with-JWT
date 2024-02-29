@@ -23,7 +23,7 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-5 px-md-5">
-                <form method="post">
+                <form action="/register" method="post">
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="row">
                     <div class="col-md-6 mb-4">
@@ -45,14 +45,19 @@
                     <input type="password" id="form3Example4" name="password" class="form-control" />
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
-  
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Subscribe to our newsletter
-                    </label>
+
+                  <!-- Confirm Password input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4" name="confirmPassword" class="form-control" />
+                    <label class="form-label" for="form3Example4">Confirm Password</label>
                   </div>
+  
+                  <div class="form-check d-flex justify-content-center mb-4">
+                    <input class="form-check-input me-2" type="checkbox" value="true" name="termsConditions" id="form2Example33" />
+                    <label class="form-check-label" for="form2Example33">
+                        Subscribe to our newsletter
+                    </label>
+                </div>
   
                   <!-- Submit button -->
                   <button type="submit" name="submit" class="btn btn-primary btn-block mb-4">
